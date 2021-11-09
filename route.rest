@@ -1,0 +1,19 @@
+GET http://localhost:3000/users/6189a3ec3f8b34ed58e5829c
+
+###
+
+GET http://localhost:3000/users
+
+###
+
+DELETE http://localhost:3000/users/61898eda13679969f39df1b1
+
+
+###
+
+PATCH  http://localhost:3000/users/6189a3ec3f8b34ed58e5829c
+Content-Type: application/json
+
+{
+    "cin" : "70"
+}
