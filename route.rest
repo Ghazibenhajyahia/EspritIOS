@@ -6,14 +6,21 @@ GET http://localhost:3000/users
 
 ###
 
-DELETE http://localhost:3000/users/61898eda13679969f39df1b1
+DELETE http://localhost:3000/users/6189a3ec3f8b34ed58e5829c
 
 
 ###
 
-PATCH  http://localhost:3000/users/6189a3ec3f8b34ed58e5829c
+PATCH  http://localhost:3000/users/61911d8ca8402a5be0182808
 Content-Type: application/json
 
 {
-    "cin" : "70"
+    
+    "address" : {
+        "street" : "La goulette",
+        "city" : "Tunis" ,
+        "State" : "Tunis",
+        "postalCode" : 2060 ,
+        "country" : "Tunis"
+    }
 }

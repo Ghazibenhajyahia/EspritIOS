@@ -1,5 +1,7 @@
 var express = require('express')
 const User = require('../models/user')
+const Address = require('../models/address')
+const Municipality = require('../models/municipality')
 var router = express.Router()
 
 /* Getting ALL */
@@ -34,6 +36,9 @@ router.patch("/:id", getUser, async (req, res) => {
   if (req.body.lastname != null) {
     res.user.lastname = req.body.lastname
   }
+  if (req.body.address != null) {
+    res.user.address = req.body.address
+  }
   try {
     const updatedUser = await res.user.save()
     res.json(updatedUser)
@@ -55,8 +60,17 @@ router.delete("/:id", getUser, async (req, res) => {
 
 /* Creating One */
 router.post("/", async (req, res, next) => {
+  const municipality = new Municipality({
+
+  })
+  const address = new Address({
+    street: req.body.street,
+    city: req.body.street,
+    state: req.body.street,
+    postalCode: req.body.street,
+    country: req.body.street,
+  })
   const user = new User({
-    idCitizen: req.body.idCitizen,
     firstname: req.body.firstname,
     lastname: req.body.lastname,
     phoneNumber: req.body.phoneNumber,
@@ -66,7 +80,7 @@ router.post("/", async (req, res, next) => {
     civilStatus: req.body.civilStatus,
     cin: req.body.cin,
     password: req.body.password,
-    address: req.body.address
+    address: address
   })
   console.log("Posted Successfuly" + user)
 
