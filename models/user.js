@@ -40,6 +40,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    photoProfil:{
+        type: String,
+        required: false
+    },
     address: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'address'
@@ -53,5 +57,12 @@ const userSchema = new mongoose.Schema({
         ref: 'municipality'
     }]
 });
+
+/*
+userSchema.pre('save', function() {
+    const user = this;
+
+})
+*/
 
 module.exports = mongoose.model("user", userSchema);

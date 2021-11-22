@@ -16,6 +16,7 @@ var municipalityRouter = require('./routes/municipalitys');
 var locationRouter = require('./routes/locations');
 var eventRouter = require('./routes/events');
 
+
 var app = express();
 
 // mongoose connect string_conn = mongodb+srv://adminIOS:<IFJWGrpWfCv5jAuV>@ios.sonll.mongodb.net/IOS?retryWrites=true&w=majority
@@ -39,6 +40,7 @@ app.use('/claims', claimRouter);
 app.use('/municipalitys', municipalityRouter);
 app.use('/locations', locationRouter);
 app.use('/events', eventRouter);
+app.use('/upload',express.static(path.join(__dirname,'upload')))
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

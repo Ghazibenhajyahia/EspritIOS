@@ -1,12 +1,21 @@
-GET http://localhost:3000/users/6189a3ec3f8b34ed58e5829c
+GET http://localhost:3000/users
 
 ###
+POST http://localhost:3000/users/login 
+Content-Type: application/json
 
+{
+    "emailAddress":"ghazi.benhadjyahia@esprit.tn",
+    "password": "password"
+}
+
+
+###
 GET http://localhost:3000/users
 
 ###
 
-DELETE http://localhost:3000/users/6189a3ec3f8b34ed58e5829c
+DELETE http://localhost:3000/users/61911d8ca8402a5be0182808
 
 
 ###
