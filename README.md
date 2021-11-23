@@ -1,9 +1,14 @@
 # Baladeyti
 
-One Paragraph of the project description
+IOS Project Backend of a Mobile application designed for the citizens wich provides them with the informations needed about their neighberhood.
+This application gives the users the ability to report a claim to the municipality he is registred to.
+Search for historical and public locations near the user's location.
+
+
+about
 
 Initially appeared on
-[gist](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2). But the page cannot open anymore so that is why I have moved it here.
+[gist](https://github.com/Ghazibenhajyahia/EspritIOS).
 
 ## Getting Started
 
@@ -14,8 +19,8 @@ for notes on deploying the project on a live system.
 ### Prerequisites
 
 Requirements for the software and other tools to build, test and push 
-- [Example 1](https://www.example.com)
-- [Example 2](https://www.example.com)
+- [NodeJS](https://nodejs.org/en/)
+- [MangoDB](https://www.example.com)
 
 ### Installing
 
@@ -23,71 +28,54 @@ A step by step series of examples that tell you how to get a development
 environment running
 
 Say what the step will be
+1.
 
-    Give the example
+    npm install
 
-And repeat
+2.
 
-    until finished
+    npm install express
 
-End with an example of getting some data out of the system or using it
-for a little demo
+3.
 
-## Running the tests
+    npm dev start
 
-Explain how to run the automated tests for this system
 
-### Sample Tests
 
-Explain what these tests test and why
+## Running the tests via http://localhost:3000/
 
-    Give an example
+you either use postman via this url : http://localhost:3000/ 
+    
+    or
+    
+you go to the url via navigator : http://localhost:3000/
 
-### Style test
+### Login Tests
 
-Checks if the best practices and the right coding style has been used.
+to login you can test
 
-    Give an example
+    POST http://localhost:3000/users/login  
+ 
+send the username and password : 
+        
+        ContentType/applicationJson 
+        {
+            "emailAddress":"example@gmail.com",
+            "password": "examplePassword" 
+        }
 
-## Deployment
-
-Add additional notes to deploy this on a live system
 
 ## Built With
 
-  - [Contributor Covenant](https://www.contributor-covenant.org/) - Used
-    for the Code of Conduct
-  - [Creative Commons](https://creativecommons.org/) - Used to choose
-    the license
+  - [JavaScript](https://www.contributor-covenant.org/) -
+  - [NodeJS](https://nodejs.org/en/) - 
+  - [MangoDB](https://www.example.com) -
+  - [ExpressJS](https://expressjs.com/) -
 
-## Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code
-of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [Semantic Versioning](http://semver.org/) for versioning. For the versions
-available, see the [tags on this
-repository](https://github.com/PurpleBooth/a-good-readme-template/tags).
 
 ## Authors
 
-  - **Billie Thompson** - *Provided README Template* -
-    [PurpleBooth](https://github.com/PurpleBooth)
+  - **Ghazi Ben Hadj Yahia** - *Provided README Template* -
+    [Ghazibenhajyahia](https://github.com/Ghazibenhajyahia)
+  - **Khaled Mabrouk** - ** -
 
-See also the list of
-[contributors](https://github.com/PurpleBooth/a-good-readme-template/contributors)
-who participated in this project.
-
-## License
-
-This project is licensed under the [CC0 1.0 Universal](LICENSE.md)
-Creative Commons License - see the [LICENSE.md](LICENSE.md) file for
-details
-
-## Acknowledgments
-
-  - Hat tip to anyone whose code is used
-  - Inspiration
-  - etc
