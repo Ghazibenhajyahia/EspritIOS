@@ -1,4 +1,4 @@
-GET http://localhost:3000/users
+GET http://localhost:3000/articles/byAuthor/61a41bb8130bc22ed5a7d671
 Content-Type: application/json
 
 
