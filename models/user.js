@@ -6,11 +6,11 @@ const userSchema = new mongoose.Schema({
 
     firstname: {
         type: String,
-        default: null,
+        required: true,
     },
     lastname: {
         type: String,
-        default: null,
+        required: true,
     },
     phoneNumber: {
         type: Number,
@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema({
     },
     emailAddress: {
         type: String,
-        default: null,
+        required: true
     },
     birthdate: {
         type: Date,
@@ -40,7 +40,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    photoProfil:{
+    photoProfil: {
         type: String,
         required: false
     },

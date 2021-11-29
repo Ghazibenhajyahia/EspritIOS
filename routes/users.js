@@ -61,7 +61,7 @@ router.post('/login', getUserByMail, async (req, res, next) => {
 
 
 /* Getting ALL */
-router.get('/', async (req, res, next) => {
+router.get('/',authentificateToken, async (req, res, next) => {
   try {
     const users = await User.find()
     res.json(users)
@@ -94,7 +94,7 @@ router.patch("/:id", getUser, async (req, res) => {
   }
   if (req.body.password != null) {
     const hashed = Bcrypt.hash(req.body.password)
-        res.user.password =  hashed
+    res.user.password = hashed
   }
   try {
     const updatedUser = await res.user.save()
@@ -127,13 +127,9 @@ router.post("/", multer, async (req, res, next) => {
     postalCode: req.body.street,
     country: req.body.street,
   })
-
   /* this is the salt */
-
   const salt = await bcrypt.genSalt(10)
   const hashedPassword = await bcrypt.hash(req.body.password, salt)
-
-
 
   const user = new User({
     firstname: req.body.firstname,
@@ -164,7 +160,7 @@ router.post("/", multer, async (req, res, next) => {
 /*MiddleWares*/
 /* Token auth
 */
-function authentificateToken(req, res, next) {
+async function authentificateToken(req, res, next) {
   const autHeader = req.headers['authorization']
   const token = autHeader && autHeader.split(' ')[1]
 

@@ -15,6 +15,7 @@ var claimRouter = require('./routes/claims');
 var municipalityRouter = require('./routes/municipalitys');
 var locationRouter = require('./routes/locations');
 var eventRouter = require('./routes/events');
+var articlesRouter = require('./routes/articles')
 
 
 var app = express();
@@ -40,7 +41,8 @@ app.use('/claims', claimRouter);
 app.use('/municipalitys', municipalityRouter);
 app.use('/locations', locationRouter);
 app.use('/events', eventRouter);
-app.use('/upload',express.static(path.join(__dirname,'upload')))
+app.use('/upload', express.static(path.join(__dirname, 'upload')))
+app.use('/articles', articlesRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
